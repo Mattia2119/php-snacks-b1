@@ -9,7 +9,6 @@
  
 ?>
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -45,7 +44,11 @@
  <!--VERIFICA EMAIL-->
  <h4>
      <?php
-     
+     if (strpos($email,'@') !== false && strpos($email,'.') !== false) {
+         echo "L'indirizzo email è valido";
+     } else {
+         echo "ERROR *L'indirizzo email non è valido";
+     }
      ?>
  </h4>
 
@@ -59,6 +62,18 @@
     }
      ?>
  </h4>
+
+ <!--VERIFICA ACCESSO-->
+
+ <h2>
+    <?php
+     if(strlen($name) > 3 && strpos($email,'@') !== false && strpos($email,'.') !== false && is_numeric($age)) {
+         echo "ACCESSO CONSENTITO";
+     } else {
+         echo "ACCESSO NEGATO";
+     }
+    ?>
+ </h2>
     
 </body>
 </html>
