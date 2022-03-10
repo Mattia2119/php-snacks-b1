@@ -1,10 +1,13 @@
+<!--Snack 2-->
+
 <?php
+ $name = $_GET['name'];
  
+ $email = $_GET['email'];
  
-
+ $age = $_GET['age'];
+ 
 ?>
-
-
 
 
 <!DOCTYPE html>
@@ -16,6 +19,46 @@
     <title>Document</title>
 </head>
 <body>
+
+ <h3>
+     Il nome inserito è (<?php echo $name;?>)
+ </h3>
+
+ <h3>
+     La mail inserita è (<?php echo $email;?>)
+ </h3>
+
+ <h3>
+     L'età inserita è (<?php echo $age;?>)
+ </h3>
+
+ <!--VERIFICA NOME-->
+ <h4>
+     <?php
+       if (strlen($name) <= 3) {
+           echo "ERROR *il nome deve essere di 4 o più caratteri";
+       } else {
+           echo "Il nome inserito è valido";
+       }
+     ?>
+ </h4>
+ <!--VERIFICA EMAIL-->
+ <h4>
+     <?php
+     
+     ?>
+ </h4>
+
+ <!--VERIFICA ETA'-->
+ <h4>
+     <?php
+     if (is_numeric($age)) {
+        echo "L'età inserita è valida";
+    } else {
+        echo "ERROR *L'età inserita non è un numero";
+    }
+     ?>
+ </h4>
     
 </body>
 </html>
